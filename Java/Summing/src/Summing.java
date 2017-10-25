@@ -1,24 +1,34 @@
+import java.io.IOException;
+import java.math.BigInteger;
 
 public class Summing {
 	
 	static public void main(String[] args) {
 		long startTime = System.nanoTime();
 	
-		System.out.println(sum());
+		System.out.println(Long.MAX_VALUE);
 		
-		System.out.println(System.nanoTime() - startTime);
-	
-		System.out.println(Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory());
+		System.out.println((double)(System.nanoTime() - startTime) / 1000000000);
 	}
 	
-	static public long sum() {
+	static public String sum(long n, boolean useBig) {
 		
-		long answer = 0;
-		
-		for(long i = 1; i <= 1000000000; i++) {
-			answer += i;
+		if(useBig) {
+			BigInteger answer = BigInteger.ZERO;
+			
+			for(long i = 1; i <= n; i++) {
+				answer = answer.add(new BigInteger(Long.toString(i)));
+			}
+			
+			return answer.toString();
+		} else {
+			long answer = 0;
+			
+			for(long i = 1; i <= n; i++) {
+				answer += i;
+			}
+			
+			return Long.toString(answer);
 		}
-		
-		return answer;
 	}
 }

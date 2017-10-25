@@ -14,6 +14,6 @@ def calc():
     fib(50)
     print(time.clock() - a)
     process = psutil.Process(os.getpid())
-    print(process.memory_info().peak_wset)
+    print(process.memory_info().peak_wset / 1024 / 1024)
 
 calc()
