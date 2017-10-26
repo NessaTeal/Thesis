@@ -1,12 +1,26 @@
-import java.io.IOException;
 import java.math.BigInteger;
 
 public class Summing {
 	
 	static public void main(String[] args) {
+		
+		long n;
+		boolean useBig;
+		
+		try {
+			n = Long.parseLong(args[0]);
+			useBig = Boolean.parseBoolean(args[1]);
+		} catch(IndexOutOfBoundsException e) {
+			System.out.println("Not enough arguments");
+			return;
+		} catch(NumberFormatException e) {
+			System.out.println("Argument is not an integer");
+			return;
+		}
+		
 		long startTime = System.nanoTime();
 	
-		System.out.println(Long.MAX_VALUE);
+		System.out.println(sum(n, useBig));
 		
 		System.out.println((double)(System.nanoTime() - startTime) / 1000000000);
 	}
