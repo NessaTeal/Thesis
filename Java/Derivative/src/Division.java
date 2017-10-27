@@ -11,9 +11,9 @@ public class Division implements Derivable {
 	
 	@Override
 	public Derivable deriviate() {
-		a = new Sub(new Product(a.deriviate(),b), new Product(a,b.deriviate()));
-		b = new Power(b, new Const(2));
-		return this;
+		Derivable newA = new Sub(new Product(a.deriviate(),b), new Product(a,b.deriviate()));
+		Derivable newB = new Power(b, new Const(2));
+		return new Division(newA, newB);
 	}
 
 	@Override
@@ -32,6 +32,6 @@ public class Division implements Derivable {
 	
 	@Override
 	public String toString() {
-		return "(" + a + ")/(" + b + ")";
+		return "(" + a + " / " + b + ")";
 	}
 }

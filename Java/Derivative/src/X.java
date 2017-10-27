@@ -10,4 +10,9 @@ public class X implements Derivable {
 	public Derivable simplify() {
 		return this;
 	}
+	
+	@Override
+	public String toString() {
+		return "x";
+	}
 }

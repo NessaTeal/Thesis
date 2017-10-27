@@ -11,7 +11,7 @@ public class Power implements Derivable {
 	
 	@Override
 	public Derivable deriviate() {
-		if (a.equals(new E())) {
+		if (a.getClass() == E.class) {
 			return new Product(this, b.deriviate());
 		} else {
 			return new Product(new Product(b, new Log(a)).deriviate(), new Power(a, b));
@@ -33,5 +33,10 @@ public class Power implements Derivable {
 			b = bSimple;
 			return this;
 		}
+	}
+	
+	@Override
+	public String toString() {
+		return a + " ^ " + b;
 	}
 }

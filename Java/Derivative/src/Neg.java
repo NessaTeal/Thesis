@@ -17,4 +17,9 @@ public class Neg implements Derivable {
 		a = a.simplify();
 		return this;
 	}
+	
+	@Override
+	public String toString() {
+		return "-" + a;
+	}
 }

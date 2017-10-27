@@ -31,4 +31,9 @@ public class Sub implements Derivable {
 			return this;
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return a + " - " + b;
+	}
 }

@@ -16,4 +16,9 @@ public class Sin implements Derivable {
 		a = a.simplify();
 		return this;
 	}
+	
+	@Override
+	public String toString() {
+		return "Sin(" + a + ")";
+	}
 }
