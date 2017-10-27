@@ -6,7 +6,7 @@ main :: IO ()
 main = do
   args <- getArgs
 
-  when (length args < 2) (error "Not enough arguments")
+  when (length args /= 2) (error "Wrong number of arguments")
 
   let nString = head args
   let useBig = args !! 1

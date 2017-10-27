@@ -6,3 +6,5 @@ Haskell/Summing/results
 *.o
 *.exe
 Haskell/Summing/results2
+Haskell/Summing/resultsInt2
+Haskell/Summing/resultsInt
