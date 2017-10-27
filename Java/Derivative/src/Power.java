@@ -12,7 +12,7 @@ public class Power implements Derivable {
 	@Override
 	public Derivable deriviate() {
 		if (a.getClass() == E.class) {
-			return new Product(this, b.deriviate());
+			return new Product(new Power(a, b), b.deriviate());
 		} else {
 			return new Product(new Product(b, new Log(a)).deriviate(), new Power(a, b));
 		}

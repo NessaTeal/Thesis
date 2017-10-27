@@ -11,9 +11,7 @@ class Sum implements Derivable {
 	
 	@Override
 	public Derivable deriviate() {
-		a = a.deriviate();
-		b = b.deriviate();
-		return this;
+		return new Sum(a.deriviate(), b.deriviate());
 	}
 	
 	@Override
