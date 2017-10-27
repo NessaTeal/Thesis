@@ -41,7 +41,9 @@ simplify (Sum a b)
   | Const 0 == simplify b = simplify a
   | otherwise = Sum (simplify a) (simplify b)
 simplify (Const a) = Const a
-simplify (Log a) = Log (simplify a)
+simplify (Log a)
+  | E == simplify a = Const 1
+  | otherwise = Log (simplify a)
 simplify (Cos a) = Cos (simplify a)
 simplify (Sin a) = Sin (simplify a)
 simplify (Neg a) = Neg (simplify a)

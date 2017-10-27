@@ -14,8 +14,12 @@ public class Log implements Derivable {
 
 	@Override
 	public Derivable simplify() {
-		a = a.simplify();
-		return this;
+		if(a.getClass() == E.class) {
+			return new Const(1);
+		} else {
+			Derivable newA = a.simplify();
+			return new Log(newA);
+		}
 	}
 	
 	@Override
