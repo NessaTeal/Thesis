@@ -1,11 +1,12 @@
-
 public class Derivative {
 
 	public static void main(String[] args) {
 		
-		Derivable x = new Power(new Const(2), new X()).deriviate();
+		long startTime = System.nanoTime();
+
+		Derivable x = new Product(new X(), new Power(new E(), new Sum(new X(), new Const(1))));
+		System.out.println(x.derive().simplify());
 		
-		System.out.println(x);
-		System.out.println(x.simplify());
+		System.out.println(System.nanoTime() - startTime);
 	}
 }

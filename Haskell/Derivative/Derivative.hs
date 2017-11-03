@@ -1,5 +1,5 @@
 main :: IO ()
-main = print . simplify $ derive E
+main = print . simplify $ derive $ Product X $ Power E $ Sum X (Const 1)
 
 data Derivable a = Product (Derivable a) (Derivable a)
                   | Division (Derivable a) (Derivable a)
