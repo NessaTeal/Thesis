@@ -71,8 +71,11 @@ class Log(object):
 		return Product(Division(Const(1), self._a), self._a.derive())
 
 	def simplify(self):
-		newA = self._a.simplify()
-		return Log(newA)
+		if type(self._a) == type(E()):
+			return Const(1)
+		else:
+			newA = self._a.simplify()
+			return Log(newA)
 
 	def __str__(self):
 		return "Log(" + str(self._a) + ")"
@@ -98,7 +101,7 @@ class Power(object):
 		self._b = b
 
 	def derive(self):
-		if self._a == E():
+		if type(self._a) == type(E()):
 			return Product(Power(self._a, self._b), self._b.derive())
 		else:
 			return Product(Product(self._b, Log(self._a)).derive(), Power(self._a, self._b))
