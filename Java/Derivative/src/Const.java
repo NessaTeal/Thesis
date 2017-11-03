@@ -8,7 +8,7 @@ public class Const implements Derivable {
 	double a;
 	
 	@Override
-	public Derivable deriviate() {
+	public Derivable derive() {
 		return new Const(0);
 	}
 

@@ -7,8 +7,8 @@ public class Sin implements Derivable {
 	Derivable a;
 	
 	@Override
-	public Derivable deriviate() {
-		return new Product(new Cos(a), a.deriviate());
+	public Derivable derive() {
+		return new Product(new Cos(a), a.derive());
 	}
 
 	@Override

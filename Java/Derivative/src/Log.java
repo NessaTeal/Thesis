@@ -8,8 +8,8 @@ public class Log implements Derivable {
 	Derivable a;
 	
 	@Override
-	public Derivable deriviate() {
-		return new Product(new Division(new Const(1), a), a.deriviate());
+	public Derivable derive() {
+		return new Product(new Division(new Const(1), a), a.derive());
 	}
 
 	@Override

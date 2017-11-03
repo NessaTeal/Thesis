@@ -2,7 +2,7 @@
 public class X implements Derivable {
 	
 	@Override
-	public Derivable deriviate() {
+	public Derivable derive() {
 		return new Const(1);
 	}
 	

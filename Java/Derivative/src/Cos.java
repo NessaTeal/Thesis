@@ -8,8 +8,8 @@ public class Cos implements Derivable {
 	Derivable a;
 	
 	@Override
-	public Derivable deriviate() {
-		return new Product(new Neg(new Sin(a)), a.deriviate());
+	public Derivable derive() {
+		return new Product(new Neg(new Sin(a)), a.derive());
 	}
 
 	@Override

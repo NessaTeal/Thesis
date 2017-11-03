@@ -10,11 +10,11 @@ public class Power implements Derivable {
 	Derivable b;
 	
 	@Override
-	public Derivable deriviate() {
+	public Derivable derive() {
 		if (a.getClass() == E.class) {
-			return new Product(new Power(a, b), b.deriviate());
+			return new Product(new Power(a, b), b.derive());
 		} else {
-			return new Product(new Product(b, new Log(a)).deriviate(), new Power(a, b));
+			return new Product(new Product(b, new Log(a)).derive(), new Power(a, b));
 		}
 	}
 

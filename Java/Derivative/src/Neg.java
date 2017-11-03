@@ -7,8 +7,8 @@ public class Neg implements Derivable {
 	Derivable a;
 	
 	@Override
-	public Derivable deriviate() {
-		a = a.deriviate();
+	public Derivable derive() {
+		a = a.derive();
 		return this;
 	}
 

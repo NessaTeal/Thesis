@@ -10,8 +10,8 @@ public class Division implements Derivable {
 	Derivable b;
 	
 	@Override
-	public Derivable deriviate() {
-		Derivable newA = new Sub(new Product(a.deriviate(),b), new Product(a,b.deriviate()));
+	public Derivable derive() {
+		Derivable newA = new Sub(new Product(a.derive(),b), new Product(a,b.derive()));
 		Derivable newB = new Power(b, new Const(2));
 		return new Division(newA, newB);
 	}

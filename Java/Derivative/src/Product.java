@@ -10,8 +10,8 @@ public class Product implements Derivable {
 	Derivable b;
 	
 	@Override
-	public Derivable deriviate() {
-		return new Sum(new Product(a.deriviate(), b), new Product(a,b.deriviate()));
+	public Derivable derive() {
+		return new Sum(new Product(a.derive(), b), new Product(a,b.derive()));
 	}
 
 	@Override

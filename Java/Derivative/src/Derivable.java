@@ -1,4 +1,4 @@
 interface Derivable {
-	public Derivable deriviate();
+	public Derivable derive();
 	public Derivable simplify();
 }

@@ -10,8 +10,8 @@ public class Sub implements Derivable {
 	Derivable b;
 	
 	@Override
-	public Derivable deriviate() {
-		return new Sum(a.deriviate(), b.deriviate());
+	public Derivable derive() {
+		return new Sum(a.derive(), b.derive());
 	}
 	
 	@Override
