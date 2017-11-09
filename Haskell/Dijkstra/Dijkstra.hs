@@ -14,9 +14,9 @@ type Destination = Node
 
 createGraph::Map.Map Origin (Map.Map Destination Cost)
 createGraph = Map.fromList [(Node 0, Map.fromList [(Node 1, 2), (Node 2, 3), (Node 3, 8)]),
-                (Node 1, Map.fromList [(Node 0, 3), (Node 2, 3), (Node 3, 9)]),
-                (Node 2, Map.fromList [(Node 0, 5), (Node 1, 3), (Node 3, 2)]),
-                (Node 3, Map.fromList [(Node 0, 2), (Node 1, 1), (Node 2, 3)])]
+                (Node 1, Map.fromList [(Node 0, 2), (Node 2, 4), (Node 3, 9)]),
+                (Node 2, Map.fromList [(Node 0, 3), (Node 1, 4), (Node 3, 2)]),
+                (Node 3, Map.fromList [(Node 0, 8), (Node 1, 9), (Node 2, 2)])]
 
 findShortestDistance::Map.Map Origin (Map.Map Destination Cost) -> Origin -> Map.Map Node Distance
 findShortestDistance edges origin = calculateOneNode (Map.singleton origin 0) Set.empty origin
