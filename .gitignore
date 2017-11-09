@@ -8,3 +8,8 @@ Haskell/Summing/results
 Haskell/Summing/results2
 Haskell/Summing/resultsInt2
 Haskell/Summing/resultsInt
+Java/*
+Java/*/*
+!Java/*/
+!Java/*/src
+!Java/*/src/*
