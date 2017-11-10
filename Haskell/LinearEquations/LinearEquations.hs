@@ -23,9 +23,9 @@ getDeterminant matrix = if len == 2
                                 d = last $ last matrix
 
 getAdjugate :: (Fractional a) => [[a]] -> [[a]]
-getAdjugate matrix = map (map (\tuple -> uncurry getMinor tuple matrix)) matrixWithIndices
+getAdjugate matrix = map (map (\tuple -> uncurry getMinor tuple matrix)) matrixOfIndices
   where len = length matrix
-        matrixWithIndices = map (\y -> map (\x ->(x,y)) [0..(len - 1)]) [0..(len - 1)]
+        matrixOfIndices = map (\y -> map (\x ->(x,y)) [0..(len - 1)]) [0..(len - 1)]
 
 multiplyMatrixAndVector :: (Fractional a) => [[a]] -> [a] -> [a]
 multiplyMatrixAndVector matrix vector = map (sum . zipWith (*) vector) matrix
