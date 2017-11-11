@@ -1,10 +1,11 @@
 
 main :: IO ()
-main = print $ map (/determinant) (multiplyMatrixAndVector adjugate vector)
+main = print $ map (/determinant) multiplied
   where matrix = [[1,1,1],[0,2,5],[2,5,-1]]
         vector = [6,-4,27]
         determinant = getDeterminant matrix
         adjugate = getAdjugate matrix
+        multiplied = multiplyMatrixAndVector adjugate vector
 
 getMinor :: (Fractional a) => Int -> Int -> [[a]] -> a
 getMinor i j matrix = (-1) ^^ (i + j) * value
