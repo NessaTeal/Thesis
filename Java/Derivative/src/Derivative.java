@@ -6,7 +6,7 @@ public class Derivative {
 
 		Derivable x = new Product(new X(), new Power(new E(), new Sum(new X(), new Const(1))));
 		System.out.println(x.derive().simplify());
-		
-		System.out.println(System.nanoTime() - startTime);
+
+		System.out.println((double)(System.nanoTime() - startTime) / 1000000000);
 	}
 }
