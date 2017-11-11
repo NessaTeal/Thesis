@@ -13,7 +13,7 @@ public class Node {
 
 	void addNeighbor(Node destination, int cost) {
 		neighbors.put(destination, cost);
-		destination.addNeighbor(this, cost);
+		destination.neighbors.put(this, cost);
 	}
 
 	Set<Node> getNeighbors() {
