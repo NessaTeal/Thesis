@@ -48,7 +48,7 @@ def findShortestDistances(graph, index):
 def calc():
     graph = createGraph()
     a = time.clock()
-    print(findShortestDistance(graph, 0))
+    print(findShortestDistances(graph, 0))
     print(time.clock() - a)
     process = psutil.Process(os.getpid())
     print(process.memory_info().peak_wset / 1024 / 1024)
