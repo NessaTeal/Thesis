@@ -17,8 +17,8 @@ public class Fibonacci {
 		long startTime = System.nanoTime();
 
 		System.out.println(fib(n));
-		
-		System.out.println(System.nanoTime() - startTime);
+
+		System.out.println((double)(System.nanoTime() - startTime) / 1000000000);
 	}
 	
 	public static long fib(long n) {
