@@ -1,15 +1,27 @@
 from copy import deepcopy
 
+import os
+import sys
+import psutil
+import time
+
 def calc():
     matrix = [[1,1,1],[0,2,5],[2,5,-1]]
     vector = [6,-4,27]
 
+    a = time.clock()
+    print(getAnswer(matrix, vector))
+    print(time.clock() - a)
+    process = psutil.Process(os.getpid())
+    print(process.memory_info().peak_wset / 1024 / 1024)
+
+def getAnswer(matrix, vector):
     determinant = getDeterminant(matrix)
     adjugate = getAdjugate(matrix)
     multiplied = multiplyMatrixAndVector(adjugate, vector)
     answer = list(map(lambda x : x / determinant, multiplied))
 
-    print(answer)
+    return answer
 
 def getMinor(i, j, matrix):
     matrix = deepcopy(matrix)

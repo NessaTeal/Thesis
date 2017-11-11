@@ -19,12 +19,20 @@ public class LinearEquations {
 
 		List<Double> vector = Arrays.asList(new Double[] {6.0,-4.0,27.0});
 		
+		long startTime = System.nanoTime();
+	
+		System.out.println(getAnswer(matrix, vector));
+		
+		System.out.println((double)(System.nanoTime() - startTime) / 1000000000);
+	}
+	
+	public static List<Double> getAnswer(List<List<Double>> matrix, List<Double> vector) {
 		double determinant = getDeterminant(matrix);
 		List<List<Double>> adjugate = getAdjugate(matrix);
 		List<Double> multiplied = multiplyMatrixAndVector(adjugate, vector);
 		List<Double> answer = multiplied.stream().map(x -> x / determinant).collect(Collectors.toList());
 		
-		System.out.println(answer);
+		return answer;
 	}
 	
 	public static double getMinor(int i, int j, List<List<Double>> matrix) {
