@@ -20,29 +20,32 @@ public class Summing {
 		
 		long startTime = System.nanoTime();
 	
-		System.out.println(sum(n, useBig));
+		if(useBig) {
+			System.out.println(sumBigInteger(n));
+		} else {
+			System.out.println(sumLong(n));
+		}
 		
 		System.out.println((double)(System.nanoTime() - startTime) / 1000000000);
 	}
 	
-	static public String sum(long n, boolean useBig) {
+	static public long sumLong(long n) {
+		long answer = 0;
 		
-		if(useBig) {
-			BigInteger answer = BigInteger.ZERO;
-			
-			for(long i = 1; i <= n; i++) {
-				answer = answer.add(new BigInteger(Long.toString(i)));
-			}
-			
-			return answer.toString();
-		} else {
-			long answer = 0;
-			
-			for(long i = 1; i <= n; i++) {
-				answer += i;
-			}
-			
-			return Long.toString(answer);
+		for(long i = 1; i <= n; i++) {
+			answer += i;
 		}
+		
+		return answer;
+	}
+	
+	static public BigInteger sumBigInteger(long n) {
+		BigInteger answer = BigInteger.ZERO;
+		
+		for(long i = 1; i <= n; i++) {
+			answer = answer.add(BigInteger.valueOf(i));
+		}
+		
+		return answer;
 	}
 }
